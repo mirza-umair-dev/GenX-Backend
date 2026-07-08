@@ -45,7 +45,7 @@ export const registerUser = async (req, res) => {
             token
         },
     )
-    console.log(user);
+    
     return user;
 
 }

@@ -15,10 +15,10 @@ app.get('/', (req, res) => {
 });
 connectDb().then(() => {
     app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.error(`Server is running on port ${PORT}`);
     });
 }).catch(() => {
-    console.log("Mongo Db connection failed");
+    console.error("Mongo Db connection failed");
 })
 app.use('/api/auth',authRoutes)
 app.use('/api/image',imageRouter)
