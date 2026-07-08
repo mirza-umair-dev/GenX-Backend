@@ -4,7 +4,6 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 const generateImage = async (req,res) => {
-    console.log("REQ BODY:", req.body);
     const {prompt} = req.body;
     if(!prompt){
         return res.status(400).json({ message: "Prompt is required" });
