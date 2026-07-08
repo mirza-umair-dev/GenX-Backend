@@ -5,7 +5,10 @@ import authRoutes from './routes/authRoutes.js'
 import imageRouter from "./routes/ImageRoutes.js";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "https://gen-x-frontend-opal.vercel.app",
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 5000;
