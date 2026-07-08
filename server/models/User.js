@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     otp : {type:String},
     otpExpiry : {type:Date},
     isVerified : {type:Boolean,default:false},
-    CreditBalance : {type:Number,default:5},
+    CreditBalance : {type:Number,default:0},
     resetOtp:{type:String},
     resetOtpExpiry:{type:Date}
 })

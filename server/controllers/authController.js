@@ -108,11 +108,20 @@ export const verifyOtp = async (req, res) => {
     if (user.otpExpiry < Date.now()) {
         return res.status(400).json({ success: false, message: "OTP expired" });
     }
-    user.isVerified = true;
+   try {
+    if (user.otp == otp) {
+         user.isVerified = true;
+    user.CreditBalance=5;
     user.otp = 0;
     user.otpExpiry = 0;
     await user.save();
     res.status(200).json({ success: true, message: "User verified successfully" });
+    console.log('success')
+    }
+    
+   } catch (error) {
+    console.error(error);
+   }
 }
 export const verifyResetOtp = async (req, res) => {
     const { email,resetOtp } = req.body;

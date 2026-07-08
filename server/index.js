@@ -22,3 +22,4 @@ connectDb().then(() => {
 })
 app.use('/api/auth',authRoutes)
 app.use('/api/image',imageRouter)
+app.use('/',imageRouter)
